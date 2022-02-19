@@ -1,0 +1,75 @@
+body {
+    max-width: 100vw;
+    max-height: 100vh;
+    overflow-y: hidden;
+  }
+  
+  #input-message {
+    display: flex;
+    /* position: fixed; */
+    /* background-color: #ffffff; */
+    padding-top: 1em;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding-bottom: 1em;
+  }
+  
+  .input {
+    display: flex;
+    width: 100%;
+  }
+  
+  #ComposedMessage{
+    flex: 10;
+    background: #f1eeee;
+    color: #303030;
+    font-size: 120%;
+    height: 5vh;
+    margin-left: .5em;
+    border: none;
+    border-bottom: 2px solid blue;
+    padding: 14px 20px;
+    border-radius: 5px;
+  }
+  
+  #SendMessage {
+    flex: 1;
+    margin-left: .5em;
+    margin-right: .5em;
+    border-radius: 5px;
+    background: rgb(99, 124, 233);
+  }
+  
+  #SendMessage:hover {
+    background: rgb(152, 167, 231);
+  }
+  
+  h2 {
+    font-family: "Poppins",sans-serif;
+  }
+  
+  .past_messages {
+    height: 75vh;
+    width: 100%;
+    max-width: 100%;
+    overflow-y: scroll;
+    /* box-shadow: 2px 2px 12px rgba(0,0,0,0.2); */
+  }
+  
+  .past_messages::-webkit-scrollbar {
+    width: .5em;
+  }
+  
+  /* Track */
+  .past_messages::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+  }
+  
+  /* Track */
+  .past_messages::-webkit-scrollbar-thumb {
+    background: grey; 
+    border-radius: 10px;
+  }
+  
