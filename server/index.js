@@ -25,10 +25,18 @@ const io = new Server(server, {
 
 // Detect if someone connects to socketio server, event with 'connection' id 
 io.on('connection', (socket) => {
-  console.log(`User connected: ${socket.id}`)
+    console.log(`User connected: ${socket.id}`)
 
-  socket.on('disconnect', () => {
-    console.log("User Disconnected", socket.id)
+    socket.on("join_room", (data) => {
+        socket.join(data)
+        console.log(`User with ID: ${socket.id} Joined Room: ${data}`)
+    })
+    // This is a socket io event called send_message that will accept data in variable, data
+    socket.on('send_message', (data) => {
+        console.log(data)
+    })
+    socket.on('disconnect', () => {
+        console.log("User Disconnected", socket.id)
   })
 
 })
