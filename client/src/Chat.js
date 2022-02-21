@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import ScrollToBottom from 'react-scroll-to-bottom'
+import App from './App';
 
 function Chat({socket, username, room}) {
     const [currentMessage, setCurrentMessage] = useState("")
     const [messageList, setMessageList] = useState([])
+    const [showApp, setShowApp] = useState(false)
 
     // Async means to always return a value, (we wait for the message to be sent)
     const sendMessage = async () => {
@@ -34,10 +36,18 @@ function Chat({socket, username, room}) {
         })
     }, [socket])
 
+    const joinApp = () => {
+        setShowApp(true)
+      }
+
   // Frontend 
   return (
+    <div className="Chat">
+    {/* Return back to the App.js page */}
+    {!showApp ? (
     <div className="chat-window">
         <div className='chat-header'>
+            <button onClick={joinApp}>&#x21e6;</button>
             <p>Live Chat</p>
         </div>
         <div className='chat-body'>
@@ -75,6 +85,11 @@ function Chat({socket, username, room}) {
             />
             <button onClick={sendMessage}>&#x27A4;</button>
         </div>
+    </div>
+    ) : ( 
+    // Goes to Chat.js
+    <App/>
+    )} 
     </div>
   )
 }

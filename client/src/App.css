@@ -59,12 +59,19 @@ body {
   margin: 0;
 }
 .chat-window .chat-header {
+  display: flex;
   height: 45px;
   border-radius: 6px;
   background: #263238;
   position: relative;
+}
+
+.chat-window .chat-header button {
+  background-color: #263238;
+  color: #43a047;
   cursor: pointer;
 }
+
 .chat-window .chat-header p {
   display: block;
   padding: 0 1em 0 2em;
