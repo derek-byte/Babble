@@ -1,11 +1,14 @@
+Babble
+Created a chatting app utilizing Socket.io, Express, Node.js, and React
+
 Dependencies:
-npm i nodemon express socket.io cors 
-npm install react-scroll-to-bottom
+1. npm i nodemon express socket.io cors 
+2. npm install react-scroll-to-bottom
 
-Run the Application:
-    cd server
-    npm start
+Run the Server:
+1. cd server
+2. npm start
 
-    - Do this in another terminal to run React
-    cd client 
-    npm start
+Run the Front-end
+1. cd client 
+2. npm start
