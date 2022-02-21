@@ -33,6 +33,8 @@ io.on('connection', (socket) => {
     })
     // This is a socket io event called send_message that will accept data in variable, data
     socket.on('send_message', (data) => {
+        // .to() is used to send data only to that socket io room
+        socket.to(data.room).emit("recieve_message", data)
         console.log(data)
     })
     socket.on('disconnect', () => {

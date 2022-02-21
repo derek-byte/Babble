@@ -11,18 +11,23 @@ function App() {
 
   const joinRoom = () => {
     if (username !== "" && room !== "") {
+      // Emit interacts with socket event to send data
       socket.emit("join_room", room)
     }
   }
 
-  return (<div className="App">
-    <h3>Join A Chat</h3>
-    <input type="text" placeholder="User..." onChange={(event) => {setUsername(event.target.value)}}/>
-    <input type="text" placeholder="Room ID..." onChange={(event) => {setRoom(event.target.value)}}/>
-    <button onClick={joinRoom}>Join A Room</button>
+  return (
+  <div className="App">
+    <div className="joinChatContainer">  
+      <h3>Join A Chat</h3>
+      <input type="text" placeholder="User..." onChange={(event) => {setUsername(event.target.value)}}/>
+      <input type="text" placeholder="Room ID..." onChange={(event) => {setRoom(event.target.value)}}/>
+      <button onClick={joinRoom}>Join A Room</button>
+    </div>
 
-    <Chat socket={socket} username={username} room={room} />
-  </div>);
+      {/* Goes to Chat.js  */}
+      <Chat socket={socket} username={username} room={room} />
+  </div>)
 }
 
 export default App;
