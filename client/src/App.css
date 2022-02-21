@@ -120,6 +120,7 @@ body {
 
 #you .message-content {
   justify-content: flex-start;
+  background-color: cornflowerblue;
 }
 
 #you .message-meta {
@@ -133,7 +134,6 @@ body {
 
 #other .message-content {
   justify-content: flex-end;
-  background-color: cornflowerblue;
 }
 
 #other .message-meta {
